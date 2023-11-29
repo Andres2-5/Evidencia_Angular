@@ -1,0 +1,10 @@
+<!-- src/app/perfil/perfil.component.html -->
+
+<div *ngIf="empleado">
+  <h2>Bienvenido, {{ empleado.nombre }}</h2>
+  <p>Trabajo Aplicado: {{ empleado.trabajoAplicado }}</p>
+<div class="dashboard-content">
+  <!-- Otro contenido del dashboard -->
+  <app-perfil [empleado]="empleado"></app-perfil>
+</div>
+</div>

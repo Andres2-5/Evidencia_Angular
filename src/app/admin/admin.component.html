@@ -1,31 +1,43 @@
 <!-- src/app/admin/admin.component.html -->
 
-<div>
-  <!-- Botón de Cerrar sesión -->
-  <button (click)="logout()">Cerrar sesión</button>
-  <h2>Panel de Administrador - Usuarios Registrados</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>Usuario</th>
-        <th>Email</th>
-        <th>Contraseña</th>
-        <th>Acciones</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let user of users; let i = index">
-        <td>{{ user.username }}</td>
-        <td>{{ user.email }}</td>
-        <td>{{ user.password }}</td>
-        <td>
-          <button (click)="deleteUser(i)">Eliminar</button>
-          <button (click)="updateUser(i)">Actualizar</button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+<div class="dashboard-container">
+  <!-- Barra de navegación del dashboard -->
+  <div class="dashboard-navbar">
+    <button (click)="logout()">Cerrar sesión</button>
+  </div>
 
-  
+  <!-- Contenido principal del dashboard -->
+  <div class="dashboard-content">
+    <!-- Cabecera del dashboard -->
+    <h2>Panel de Administrador - Usuarios Registrados</h2>
+
+    <!-- Tabla de usuarios registrados -->
+    <table>
+      <thead>
+        <tr>
+          <th>Usuario</th>
+          <th>Email</th>
+          <th>Contraseña</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users; let i = index">
+          <td>{{ user.username }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.password }}</td>
+          <td>
+            <button (click)="deleteUser(i)">Eliminar</button>
+            <button (click)="updateUser(i)">Actualizar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Panel lateral del dashboard -->
+  <div class="dashboard-sidebar">
+    <button (click)="viewProfile()">Perfil Empleado</button>
+    <button (click)="viewJobOptions()">Opciones de Empleo</button>
+  </div>
 </div>
-  
